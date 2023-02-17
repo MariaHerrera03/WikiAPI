@@ -1,9 +1,16 @@
 const workoutService = require('../services/workoutService');
+const Workout = require('../models/Model')
+
+// const getAllWorkouts = (req, res) => {
+//     const allWorkouts = workoutService.getAllWorkouts();
+//     res.send({ status: 'OK', data: allWorkouts });
+// };
 
 const getAllWorkouts = (req, res) => {
     const allWorkouts = workoutService.getAllWorkouts();
-    res.send('Get all workouts');
+    res.send(`${workoutService.getAllWorkouts()}`);
 };
+
 
 const getOneWorkout = (req, res) => {
     const workout= workoutService.getOneWorkout(req.params.workoutId);
