@@ -1,16 +1,14 @@
 const workoutService = require('../services/workoutService');
-const Workout = require('../models/Model')
-
-// const getAllWorkouts = (req, res) => {
-//     const allWorkouts = workoutService.getAllWorkouts();
-//     res.send({ status: 'OK', data: allWorkouts });
-// };
+const Workout = require('../database/Model')
 
 const getAllWorkouts = (req, res) => {
-    const allWorkouts = workoutService.getAllWorkouts();
-    res.send(`${workoutService.getAllWorkouts()}`);
-};
-
+    Workout.find((err, result) => {
+        if(err) throw new Error(err);
+        res.json(result);
+        // console.log(res)
+    })
+    return Workout.workouts;
+}
 
 const getOneWorkout = (req, res) => {
     const workout= workoutService.getOneWorkout(req.params.workoutId);

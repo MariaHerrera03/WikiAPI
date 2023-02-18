@@ -1,8 +1,5 @@
-const Workout = require('../models/Workout')
-
 const getAllWorkouts = () => {
-    const allWorkouts = Workout.getAllWorkouts();
-    return allWorkouts; 
+    return getAllWorkouts; 
 };
 
 const getOneWorkout = () => {
