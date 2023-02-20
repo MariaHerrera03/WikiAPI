@@ -5,9 +5,9 @@ const router = express.Router();
 
 router
     .get('/', charactersController.getAllCharacters)
-    .get('/:workoutId', charactersController.getOneCharacter)
+    .get('/:characterId', charactersController.getOneCharacter)
     .post('/', charactersController.createNewCharacter)
-    .patch('/:workoutId', charactersController.updateOneCharacter)
-    .delete('/:workoutId', charactersController.deleteOneCharacter);
+    .patch('/:characterId', charactersController.updateOneCharacter)
+    .delete('/:characterId', charactersController.deleteOneCharacter);
 
 module.exports = router;
